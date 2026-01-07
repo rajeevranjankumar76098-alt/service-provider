@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SPC – Service Provider Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <style>
+    /* BASIC INLINE CSS (aap baad me main.css me shift kar sakte ho) */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+    }
+    header {
+      background: #0a3d62;
+      color: #fff;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+                  url("assets/images/banners/home-banner.jpg");
+      background-size: cover;
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+    }
+    .hero button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #27ae60;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .section {
+      padding: 50px 40px;
+      background: #fff;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: #f9f9f9;
+      border-radius: 6px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .service-card img {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+    .service-card h3 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .service-card p {
+      font-size: 14px;
+      color: #555;
+    }
+    .service-card button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #0a3d62;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .about {
+      background: #eef2f7;
+      text-align: center;
+    }
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    footer {
+      background: #0a3d62;
+      color: #fff;
+      padding: 30px 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    footer h4 {
+      margin-bottom: 10px;
+    }
+    footer a {
+      color: #ddd;
+      display: block;
+      margin-bottom: 6px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>SPC – Service Provider Centre</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h2>All Types of Repair Services</h2>
+    <p>Expert Technicians • Same Day Service • Doorstep Support</p>
+    <button onclick="location.href='services.html'">Book Service Now</button>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section">
+    <h2>Our Popular Services</h2>
+
+    <div class="services-grid">
+      <!-- Example Service Cards (aap 50 tak copy-paste kar sakte ho) -->
+
+      <div class="service-card">
+        <img src="assets/images/icons/ac.png" alt="AC Repair">
+        <h3>AC Repair</h3>
+        <p>Split & Window AC service</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="service-card">
+        <img src="assets/images/icons/washing-machine.png" alt="">
+        <h3>Washing Machine</h3>
+        <p>All brands repair</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="service-card">
+        <img src="assets/images/icons/fridge.png" alt="">
+        <h3>Refrigerator</h3>
+        <p>Cooling problem fix</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="service-card">
+        <img src="assets/images/icons/mobile.png" alt="">
+        <h3>Mobile Repair</h3>
+        <p>Screen & battery</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <!-- Isi pattern me 50 services bana sakte ho -->
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about">
+    <h2>About Service Provider Centre</h2>
+    <p>
+      Service Provider Centre (SPC) ek professional online repairing platform hai
+      jahan aap AC, Washing Machine, Refrigerator, Mobile, Laptop aur
+      kai tarah ke home appliances ke liye trusted technicians book kar sakte ho.
+      Hum fast service, genuine parts aur transparent pricing provide karte hain.
+    </p>
+  </section>
+
+  <!-- FOOTER (STANDARD – NO CART) -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">Careers</a>
+      </div>
+
+      <div>
+        <h4>Services</h4>
+        <a href="#">AC Repair</a>
+        <a href="#">Washing Machine</a>
+        <a href="#">Refrigerator</a>
+        <a href="#">Mobile Repair</a>
+      </div>
+
+      <div>
+        <h4>Support</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">Terms & Conditions</a>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>Email: serviceprovidercentre00@gmail.com</p>
+        <p>Service Area: India</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Service Provider Centre. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
