@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment | SPC – Service Provider Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f4f6f9;
+    }
+    header{
+      background:#0a3d62;
+      color:#fff;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    header h1{
+      margin:0;
+      font-size:22px;
+    }
+    nav a{
+      color:#fff;
+      margin-left:20px;
+      text-decoration:none;
+      font-weight:500;
+    }
+    .payment-container{
+      max-width:900px;
+      margin:40px auto;
+      background:#fff;
+      padding:30px;
+      border-radius:8px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+    .payment-container h2{
+      text-align:center;
+      color:#0a3d62;
+      margin-bottom:25px;
+    }
+    .payment-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:30px;
+    }
+    .box h3{
+      margin-bottom:15px;
+      color:#333;
+    }
+    .method{
+      border:1px solid #ddd;
+      padding:12px;
+      border-radius:6px;
+      margin-bottom:10px;
+      cursor:pointer;
+    }
+    .method input{
+      margin-right:8px;
+    }
+    .method.active{
+      border-color:#27ae60;
+      background:#f1fff7;
+    }
+    .form-group{
+      margin-bottom:12px;
+    }
+    label{
+      display:block;
+      font-size:14px;
+      margin-bottom:5px;
+    }
+    input,select{
+      width:100%;
+      padding:10px;
+      border-radius:4px;
+      border:1px solid #ccc;
+      font-size:14px;
+    }
+    .summary{
+      background:#f9fafc;
+      padding:20px;
+      border-radius:6px;
+      border:1px solid #ddd;
+    }
+    .summary p{
+      margin:6px 0;
+      font-size:14px;
+    }
+    .total{
+      font-size:20px;
+      font-weight:bold;
+      color:#27ae60;
+      margin-top:10px;
+    }
+    .pay-btn{
+      margin-top:25px;
+      width:100%;
+      padding:14px;
+      font-size:16px;
+      background:#27ae60;
+      color:#fff;
+      border:none;
+      border-radius:4px;
+      cursor:pointer;
+    }
+    .pay-btn:hover{
+      background:#219150;
+    }
+    footer{
+      background:#0a3d62;
+      color:#ccc;
+      padding:20px;
+      margin-top:40px;
+      text-align:center;
+      font-size:14px;
+    }
+    @media(max-width:900px){
+      .payment-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>SPC – Service Provider Centre</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="profile.html">Profile</a>
+  </nav>
+</header>
+
+<!-- PAYMENT -->
+<div class="payment-container">
+  <h2>Payment</h2>
+
+  <form id="paymentForm">
+    <div class="payment-grid">
+
+      <!-- PAYMENT METHODS -->
+      <div class="box">
+        <h3>Select Payment Method</h3>
+
+        <div class="method active">
+          <input type="radio" name="payment" checked>
+          UPI (Google Pay / PhonePe / Paytm)
+        </div>
+
+        <div class="method">
+          <input type="radio" name="payment">
+          Debit / Credit Card
+        </div>
+
+        <div class="method">
+          <input type="radio" name="payment">
+          Net Banking
+        </div>
+
+        <div class="method">
+          <input type="radio" name="payment">
+          Cash on Service
+        </div>
+
+        <!-- CARD DETAILS (DEMO) -->
+        <div class="form-group">
+          <label>Card / UPI ID (Demo)</label>
+          <input type="text" placeholder="example@upi or 1234-5678-9012-3456">
+        </div>
+      </div>
+
+      <!-- ORDER SUMMARY -->
+      <div class="box">
+        <h3>Order Summary</h3>
+
+        <div class="summary">
+          <p><strong>Service:</strong> AC Repair</p>
+          <p><strong>Quantity:</strong> 1</p>
+          <p><strong>Service Charge:</strong> ₹499</p>
+          <p><strong>Visiting Charge:</strong> ₹99</p>
+
+          <div class="total">
+            Total: ₹598
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button type="submit" class="pay-btn">
+      Pay & Confirm Booking
+    </button>
+  </form>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Service Provider Centre | serviceprovidercentre00@gmail.com
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+  // highlight selected payment method
+  document.querySelectorAll(".method").forEach(box=>{
+    box.addEventListener("click", ()=>{
+      document.querySelectorAll(".method").forEach(b=>b.classList.remove("active"));
+      box.classList.add("active");
+      box.querySelector("input").checked = true;
+    });
+  });
+
+  document.getElementById("paymentForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    alert("Payment successful (demo)!\nYour booking is confirmed.");
+    window.location.href = "orders.html"; // next page
+  });
+</script>
+
+</body>
+</html>

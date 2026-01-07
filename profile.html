@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Profile | SPC – Service Provider Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f4f6f9;
+    }
+    header{
+      background:#0a3d62;
+      color:#fff;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    header h1{
+      margin:0;
+      font-size:22px;
+    }
+    nav a{
+      color:#fff;
+      margin-left:20px;
+      text-decoration:none;
+      font-weight:500;
+    }
+    .profile-container{
+      max-width:1000px;
+      margin:40px auto;
+      padding:20px;
+    }
+    .profile-grid{
+      display:grid;
+      grid-template-columns:300px 1fr;
+      gap:30px;
+    }
+    .card{
+      background:#fff;
+      border-radius:8px;
+      padding:20px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+    .user-info h2{
+      margin-top:0;
+      color:#0a3d62;
+    }
+    .user-info p{
+      font-size:14px;
+      margin:6px 0;
+    }
+    .btn{
+      display:block;
+      width:100%;
+      padding:10px;
+      margin-top:10px;
+      background:#0a3d62;
+      color:#fff;
+      border:none;
+      border-radius:4px;
+      cursor:pointer;
+      font-size:14px;
+    }
+    .btn.logout{
+      background:#e74c3c;
+    }
+    .btn.edit{
+      background:#27ae60;
+    }
+    .section-title{
+      margin-top:0;
+      color:#0a3d62;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+    }
+    th, td{
+      padding:10px;
+      border-bottom:1px solid #ddd;
+      font-size:14px;
+      text-align:center;
+    }
+    th{
+      background:#f1f5f9;
+    }
+    .status{
+      padding:4px 8px;
+      border-radius:12px;
+      font-size:12px;
+      color:#fff;
+    }
+    .completed{ background:#27ae60; }
+    .pending{ background:#f39c12; }
+    footer{
+      background:#0a3d62;
+      color:#ccc;
+      padding:20px;
+      text-align:center;
+      margin-top:40px;
+      font-size:14px;
+    }
+    @media(max-width:900px){
+      .profile-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>SPC – Service Provider Centre</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="cart.html">Cart</a>
+    <a href="orders.html">Orders</a>
+  </nav>
+</header>
+
+<!-- PROFILE -->
+<div class="profile-container">
+  <div class="profile-grid">
+
+    <!-- USER INFO -->
+    <div class="card user-info">
+      <h2>My Profile</h2>
+      <p><strong>Name:</strong> Rajeev Kumar</p>
+      <p><strong>Email:</strong> rajeev@email.com</p>
+      <p><strong>Mobile:</strong> 9876543210</p>
+
+      <button class="btn edit" onclick="editProfile()">Edit Profile</button>
+      <button class="btn logout" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- ORDERS -->
+    <div class="card">
+      <h2 class="section-title">My Orders</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Service</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#SPC101</td>
+            <td>AC Repair</td>
+            <td>10 Feb 2026</td>
+            <td>₹598</td>
+            <td><span class="status completed">Completed</span></td>
+          </tr>
+          <tr>
+            <td>#SPC102</td>
+            <td>Washing Machine</td>
+            <td>12 Feb 2026</td>
+            <td>₹498</td>
+            <td><span class="status pending">Pending</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Service Provider Centre | serviceprovidercentre00@gmail.com
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+  function editProfile(){
+    alert("Edit profile feature (backend connect next)");
+  }
+
+  function logout(){
+    alert("Logged out successfully");
+    window.location.href = "login.html";
+  }
+</script>
+
+</body>
+</html>

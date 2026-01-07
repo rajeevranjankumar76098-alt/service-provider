@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Careers | SPC – Service Provider Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f4f6f9;
+    }
+    header{
+      background:#0a3d62;
+      color:#fff;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    header h1{
+      margin:0;
+      font-size:22px;
+    }
+    nav a{
+      color:#fff;
+      margin-left:20px;
+      text-decoration:none;
+      font-weight:500;
+    }
+    .career-container{
+      max-width:1000px;
+      margin:40px auto;
+      background:#fff;
+      padding:30px;
+      border-radius:8px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+    .career-container h2{
+      text-align:center;
+      color:#0a3d62;
+      margin-bottom:10px;
+    }
+    .career-container p{
+      text-align:center;
+      font-size:15px;
+      color:#555;
+      margin-bottom:30px;
+    }
+    .jobs{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+      gap:20px;
+    }
+    .job-card{
+      background:#f9fafc;
+      padding:20px;
+      border-radius:6px;
+      border:1px solid #ddd;
+    }
+    .job-card h3{
+      margin-top:0;
+      color:#0a3d62;
+    }
+    .job-card p{
+      font-size:14px;
+      color:#333;
+      margin:6px 0;
+    }
+    .apply-btn{
+      margin-top:10px;
+      padding:10px;
+      width:100%;
+      background:#27ae60;
+      color:#fff;
+      border:none;
+      border-radius:4px;
+      cursor:pointer;
+      font-size:14px;
+    }
+    .apply-btn:hover{
+      background:#219150;
+    }
+    .form-section{
+      margin-top:40px;
+    }
+    .form-section h3{
+      color:#0a3d62;
+      margin-bottom:15px;
+      text-align:center;
+    }
+    form{
+      max-width:600px;
+      margin:0 auto;
+    }
+    .form-group{
+      margin-bottom:12px;
+    }
+    label{
+      display:block;
+      font-size:14px;
+      margin-bottom:5px;
+    }
+    input, select, textarea{
+      width:100%;
+      padding:10px;
+      border-radius:4px;
+      border:1px solid #ccc;
+      font-size:14px;
+    }
+    textarea{
+      resize:none;
+    }
+    .submit-btn{
+      width:100%;
+      padding:12px;
+      background:#0a3d62;
+      color:#fff;
+      border:none;
+      border-radius:4px;
+      font-size:16px;
+      cursor:pointer;
+      margin-top:10px;
+    }
+    footer{
+      background:#0a3d62;
+      color:#ccc;
+      padding:20px;
+      margin-top:40px;
+      text-align:center;
+      font-size:14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>SPC – Service Provider Centre</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- CAREERS -->
+<div class="career-container">
+  <h2>Careers at SPC</h2>
+  <p>Join our growing team and build your future with Service Provider Centre</p>
+
+  <!-- JOB LIST -->
+  <div class="jobs">
+    <div class="job-card">
+      <h3>Service Technician</h3>
+      <p><strong>Type:</strong> Field Job</p>
+      <p><strong>Skills:</strong> AC, Washing Machine, Refrigerator</p>
+      <p><strong>Experience:</strong> 1+ Year</p>
+      <p><strong>Location:</strong> Multiple Cities</p>
+      <button class="apply-btn" onclick="selectRole('Service Technician')">Apply Now</button>
+    </div>
+
+    <div class="job-card">
+      <h3>Customer Support Executive</h3>
+      <p><strong>Type:</strong> Office Job</p>
+      <p><strong>Skills:</strong> Communication, CRM</p>
+      <p><strong>Experience:</strong> Fresher / Experienced</p>
+      <p><strong>Location:</strong> Office / Remote</p>
+      <button class="apply-btn" onclick="selectRole('Customer Support Executive')">Apply Now</button>
+    </div>
+
+    <div class="job-card">
+      <h3>Franchise Partner</h3>
+      <p><strong>Type:</strong> Business Opportunity</p>
+      <p><strong>Investment:</strong> As per city</p>
+      <p><strong>Support:</strong> Full company support</p>
+      <p><strong>Location:</strong> PAN India</p>
+      <button class="apply-btn" onclick="selectRole('Franchise Partner')">Apply Now</button>
+    </div>
+  </div>
+
+  <!-- APPLY FORM -->
+  <div class="form-section">
+    <h3>Apply for a Position</h3>
+
+    <form id="careerForm">
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" id="name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email" id="email" required>
+      </div>
+
+      <div class="form-group">
+        <label>Mobile Number *</label>
+        <input type="tel" id="mobile" required>
+      </div>
+
+      <div class="form-group">
+        <label>Applying For *</label>
+        <select id="role" required>
+          <option value="">Select Role</option>
+          <option>Service Technician</option>
+          <option>Customer Support Executive</option>
+          <option>Franchise Partner</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea id="message" rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Service Provider Centre | serviceprovidercentre00@gmail.com
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+  function selectRole(role){
+    document.getElementById("role").value = role;
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  }
+
+  document.getElementById("careerForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    alert("Application submitted successfully (demo). We will contact you soon.");
+    this.reset();
+  });
+</script>
+
+</body>
+</html>

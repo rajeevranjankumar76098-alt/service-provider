@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Cart | SPC – Service Provider Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f4f6f9;
+    }
+    header{
+      background:#0a3d62;
+      color:#fff;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    header h1{
+      margin:0;
+      font-size:22px;
+    }
+    nav a{
+      color:#fff;
+      margin-left:20px;
+      text-decoration:none;
+      font-weight:500;
+    }
+    .cart-container{
+      max-width:1000px;
+      margin:40px auto;
+      background:#fff;
+      padding:30px;
+      border-radius:8px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+    .cart-container h2{
+      text-align:center;
+      color:#0a3d62;
+      margin-bottom:25px;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+    }
+    th, td{
+      padding:12px;
+      text-align:center;
+      border-bottom:1px solid #ddd;
+      font-size:14px;
+    }
+    th{
+      background:#f1f5f9;
+    }
+    .qty-btn{
+      padding:4px 10px;
+      border:none;
+      background:#0a3d62;
+      color:#fff;
+      cursor:pointer;
+      border-radius:3px;
+    }
+    .remove-btn{
+      background:#e74c3c;
+      color:#fff;
+      border:none;
+      padding:6px 10px;
+      cursor:pointer;
+      border-radius:3px;
+    }
+    .cart-summary{
+      margin-top:30px;
+      text-align:right;
+    }
+    .cart-summary p{
+      font-size:15px;
+      margin:6px 0;
+    }
+    .total{
+      font-size:20px;
+      font-weight:bold;
+      color:#27ae60;
+    }
+    .checkout-btn{
+      margin-top:20px;
+      padding:12px 25px;
+      background:#27ae60;
+      color:#fff;
+      border:none;
+      border-radius:4px;
+      font-size:16px;
+      cursor:pointer;
+    }
+    footer{
+      background:#0a3d62;
+      color:#ccc;
+      padding:20px;
+      margin-top:40px;
+      text-align:center;
+      font-size:14px;
+    }
+    @media(max-width:768px){
+      table, thead, tbody, th, td, tr{
+        display:block;
+      }
+      th{
+        display:none;
+      }
+      td{
+        text-align:right;
+        position:relative;
+        padding-left:50%;
+      }
+      td::before{
+        content:attr(data-label);
+        position:absolute;
+        left:10px;
+        font-weight:bold;
+        text-align:left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>SPC – Service Provider Centre</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="profile.html">Profile</a>
+  </nav>
+</header>
+
+<!-- CART -->
+<div class="cart-container">
+  <h2>My Cart</h2>
+
+  <table id="cartTable">
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- DEMO ITEM -->
+      <tr>
+        <td data-label="Service">AC Repair</td>
+        <td data-label="Price">₹499</td>
+        <td data-label="Quantity">
+          <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+          <span class="qty">1</span>
+          <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+        </td>
+        <td data-label="Subtotal" class="subtotal">₹499</td>
+        <td data-label="Remove">
+          <button class="remove-btn" onclick="removeItem(this)">X</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td data-label="Service">Washing Machine Repair</td>
+        <td data-label="Price">₹399</td>
+        <td data-label="Quantity">
+          <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+          <span class="qty">1</span>
+          <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+        </td>
+        <td data-label="Subtotal" class="subtotal">₹399</td>
+        <td data-label="Remove">
+          <button class="remove-btn" onclick="removeItem(this)">X</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SUMMARY -->
+  <div class="cart-summary">
+    <p>Visiting Charges: ₹99</p>
+    <p class="total">Total: ₹997</p>
+    <button class="checkout-btn" onclick="checkout()">
+      Proceed to Booking
+    </button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Service Provider Centre | serviceprovidercentre00@gmail.com
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+  function changeQty(btn, change){
+    const row = btn.closest("tr");
+    const qtySpan = row.querySelector(".qty");
+    let qty = parseInt(qtySpan.innerText);
+    qty = qty + change;
+    if(qty < 1) qty = 1;
+    qtySpan.innerText = qty;
+
+    const price = parseInt(row.children[1].innerText.replace("₹",""));
+    row.querySelector(".subtotal").innerText = "₹" + (price * qty);
+
+    calculateTotal();
+  }
+
+  function removeItem(btn){
+    btn.closest("tr").remove();
+    calculateTotal();
+  }
+
+  function calculateTotal(){
+    let total = 0;
+    document.querySelectorAll(".subtotal").forEach(item=>{
+      total += parseInt(item.innerText.replace("₹",""));
+    });
+    total += total > 0 ? 99 : 0;
+    document.querySelector(".total").innerText = "Total: ₹" + total;
+  }
+
+  function checkout(){
+    if(document.querySelectorAll("tbody tr").length === 0){
+      alert("Your cart is empty");
+      return;
+    }
+    window.location.href = "booking.html";
+  }
+
+  calculateTotal();
+</script>
+
+</body>
+</html>

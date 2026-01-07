@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Services | SPC – Service Provider Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="assets/css/service.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+    }
+
+    header {
+      background: #0a3d62;
+      color: #fff;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .page-title {
+      padding: 30px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .page-title h2 {
+      margin: 0;
+      color: #0a3d62;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .filters button {
+      padding: 8px 15px;
+      border: 1px solid #0a3d62;
+      background: #fff;
+      color: #0a3d62;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .filters button.active,
+    .filters button:hover {
+      background: #0a3d62;
+      color: #fff;
+    }
+
+    .services-container {
+      padding: 40px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 6px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .service-card img {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .service-card .price {
+      font-weight: bold;
+      color: #27ae60;
+      margin: 8px 0;
+    }
+
+    .service-card button {
+      margin: 5px;
+      padding: 8px 14px;
+      font-size: 14px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-details {
+      background: #3498db;
+      color: #fff;
+    }
+
+    .btn-cart {
+      background: #0a3d62;
+      color: #fff;
+    }
+
+    footer {
+      background: #0a3d62;
+      color: #fff;
+      padding: 25px 40px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+      text-align: center;
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>SPC – Service Provider Centre</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="profile.html">Profile</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <!-- PAGE TITLE -->
+  <section class="page-title">
+    <h2>All Repair Services</h2>
+    <p>Choose from 50+ professional services</p>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <button class="active">All</button>
+    <button>Home Appliances</button>
+    <button>Electronics</button>
+    <button>Electrical</button>
+    <button>Plumbing</button>
+    <button>IT Services</button>
+  </div>
+
+  <!-- SERVICES GRID -->
+  <section class="services-container">
+    <div class="services-grid">
+
+      <!-- SERVICE CARD -->
+      <div class="service-card">
+        <img src="assets/images/icons/ac.png" alt="AC Repair" />
+        <h3>AC Repair</h3>
+        <p>Split & Window AC</p>
+        <div class="price">₹499</div>
+        <button class="btn-details"
+          onclick="location.href='service-details.html'">View Details</button>
+        <button class="btn-cart">Add to Cart</button>
+      </div>
+
+      <div class="service-card">
+        <img src="assets/images/icons/washing-machine.png" alt="" />
+        <h3>Washing Machine</h3>
+        <p>All brand repairs</p>
+        <div class="price">₹399</div>
+        <button class="btn-details">View Details</button>
+        <button class="btn-cart">Add to Cart</button>
+      </div>
+
+      <div class="service-card">
+        <img src="assets/images/icons/fridge.png" alt="" />
+        <h3>Refrigerator</h3>
+        <p>Cooling issue fix</p>
+        <div class="price">₹449</div>
+        <button class="btn-details">View Details</button>
+        <button class="btn-cart">Add to Cart</button>
+      </div>
+
+      <div class="service-card">
+        <img src="assets/images/icons/mobile.png" alt="" />
+        <h3>Mobile Repair</h3>
+        <p>Screen & battery</p>
+        <div class="price">₹299</div>
+        <button class="btn-details">View Details</button>
+        <button class="btn-cart">Add to Cart</button>
+      </div>
+
+      <!-- Isi pattern me 50 services add kar sakte ho -->
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 Service Provider Centre | Email:
+      serviceprovidercentre00@gmail.com
+    </p>
+  </footer>
+
+</body>
+</html>

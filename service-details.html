@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Service Details | SPC – Service Provider Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="assets/css/service.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+    }
+
+    header {
+      background: #0a3d62;
+      color: #fff;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .details-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .service-image img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .service-info h2 {
+      margin-top: 0;
+      color: #0a3d62;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: bold;
+      color: #27ae60;
+      margin: 10px 0;
+    }
+
+    .rating {
+      color: #f1c40f;
+      margin-bottom: 15px;
+    }
+
+    .service-info p {
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .features ul {
+      padding-left: 18px;
+      color: #333;
+    }
+
+    .features li {
+      margin-bottom: 6px;
+    }
+
+    .action-box {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .action-box select,
+    .action-box button {
+      padding: 10px 14px;
+      font-size: 14px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .qty {
+      border: 1px solid #ccc;
+    }
+
+    .btn-cart {
+      background: #0a3d62;
+      color: #fff;
+    }
+
+    .btn-book {
+      background: #27ae60;
+      color: #fff;
+    }
+
+    .extra-info {
+      max-width: 1100px;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .extra-info h3 {
+      margin-top: 0;
+      color: #0a3d62;
+    }
+
+    footer {
+      background: #0a3d62;
+      color: #fff;
+      padding: 25px;
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    @media(max-width: 900px) {
+      .details-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>SPC – Service Provider Centre</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="cart.html">Cart</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <!-- SERVICE DETAILS -->
+  <section class="details-container">
+    <div class="service-image">
+      <img src="assets/images/services/ac-repair.jpg" alt="Service Image" id="serviceImg">
+    </div>
+
+    <div class="service-info">
+      <h2 id="serviceName">AC Repair Service</h2>
+      <div class="rating">★★★★☆ (4.5/5)</div>
+      <div class="price" id="servicePrice">₹499</div>
+
+      <p id="serviceDesc">
+        Professional split and window AC repair service by trained technicians.
+        We ensure fast service, genuine spare parts and affordable pricing.
+      </p>
+
+      <div class="features">
+        <ul>
+          <li>Same day service</li>
+          <li>Certified technicians</li>
+          <li>30 days service warranty</li>
+          <li>Transparent pricing</li>
+        </ul>
+      </div>
+
+      <div class="action-box">
+        <select class="qty" id="quantity">
+          <option value="1">Qty: 1</option>
+          <option value="2">Qty: 2</option>
+          <option value="3">Qty: 3</option>
+        </select>
+
+        <button class="btn-cart" onclick="addToCart()">Add to Cart</button>
+        <button class="btn-book" onclick="bookNow()">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXTRA INFO -->
+  <section class="extra-info">
+    <h3>Why Choose SPC?</h3>
+    <p>
+      Service Provider Centre provides reliable doorstep repairing services
+      across India. Our verified technicians, quick response and affordable
+      pricing make us a trusted choice for thousands of customers.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Service Provider Centre | Email: serviceprovidercentre00@gmail.com
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Demo cart logic
+    function addToCart() {
+      const qty = document.getElementById("quantity").value;
+      alert("Service added to cart | Quantity: " + qty);
+      // Future: localStorage / API cart logic
+    }
+
+    function bookNow() {
+      window.location.href = "booking.html";
+    }
+
+    /*
+      Future ready:
+      URL example: service-details.html?id=12
+      Fetch service from backend using ID
+    */
+  </script>
+
+</body>
+</html>

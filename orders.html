@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Orders | SPC – Service Provider Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f4f6f9;
+    }
+    header{
+      background:#0a3d62;
+      color:#fff;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    header h1{
+      margin:0;
+      font-size:22px;
+    }
+    nav a{
+      color:#fff;
+      margin-left:20px;
+      text-decoration:none;
+      font-weight:500;
+    }
+    .orders-container{
+      max-width:1000px;
+      margin:40px auto;
+      background:#fff;
+      padding:30px;
+      border-radius:8px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+    .orders-container h2{
+      text-align:center;
+      color:#0a3d62;
+      margin-bottom:25px;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+    }
+    th, td{
+      padding:12px;
+      text-align:center;
+      border-bottom:1px solid #ddd;
+      font-size:14px;
+    }
+    th{
+      background:#f1f5f9;
+    }
+    .status{
+      padding:5px 10px;
+      border-radius:12px;
+      font-size:12px;
+      color:#fff;
+    }
+    .completed{ background:#27ae60; }
+    .pending{ background:#f39c12; }
+    .cancelled{ background:#e74c3c; }
+    .view-btn{
+      padding:6px 12px;
+      border:none;
+      border-radius:4px;
+      background:#0a3d62;
+      color:#fff;
+      cursor:pointer;
+      font-size:13px;
+    }
+    footer{
+      background:#0a3d62;
+      color:#ccc;
+      padding:20px;
+      margin-top:40px;
+      text-align:center;
+      font-size:14px;
+    }
+    @media(max-width:768px){
+      table, thead, tbody, th, td, tr{
+        display:block;
+      }
+      th{ display:none; }
+      td{
+        text-align:right;
+        position:relative;
+        padding-left:50%;
+      }
+      td::before{
+        content:attr(data-label);
+        position:absolute;
+        left:10px;
+        font-weight:bold;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>SPC – Service Provider Centre</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="profile.html">Profile</a>
+  </nav>
+</header>
+
+<!-- ORDERS -->
+<div class="orders-container">
+  <h2>My Orders</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Service</th>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td data-label="Order ID">#SPC201</td>
+        <td data-label="Service">AC Repair</td>
+        <td data-label="Date">15 Feb 2026</td>
+        <td data-label="Amount">₹598</td>
+        <td data-label="Status">
+          <span class="status completed">Completed</span>
+        </td>
+        <td data-label="Action">
+          <button class="view-btn" onclick="viewOrder('#SPC201')">
+            View
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td data-label="Order ID">#SPC202</td>
+        <td data-label="Service">Washing Machine</td>
+        <td data-label="Date">18 Feb 2026</td>
+        <td data-label="Amount">₹498</td>
+        <td data-label="Status">
+          <span class="status pending">Pending</span>
+        </td>
+        <td data-label="Action">
+          <button class="view-btn" onclick="viewOrder('#SPC202')">
+            View
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td data-label="Order ID">#SPC203</td>
+        <td data-label="Service">Mobile Repair</td>
+        <td data-label="Date">20 Feb 2026</td>
+        <td data-label="Amount">₹299</td>
+        <td data-label="Status">
+          <span class="status cancelled">Cancelled</span>
+        </td>
+        <td data-label="Action">
+          <button class="view-btn" onclick="viewOrder('#SPC203')">
+            View
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Service Provider Centre | serviceprovidercentre00@gmail.com
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+  function viewOrder(orderId){
+    alert("Order Details for " + orderId + "\n(Backend connect next)");
+  }
+</script>
+
+</body>
+</html>
