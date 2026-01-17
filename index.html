@@ -165,140 +165,74 @@
     <button onclick="location.href='services.html'">Book Service Now</button>
   </section>
 
-<!-- 1–10 -->
-<div class="service-card" onclick="openService('Mobile Repair','images/services/mobile.png','Mobile repair service at your home within 24 hours')">
-    <img src="images/services/mobile.png">
-    <h4>Mobile Repair</h4>
-</div>
+  <!-- SERVICES -->
+  <section class="section">
+    <h2>Our Popular Services</h2>
 
-<div class="service-card">
-<img src="images/services/laptop.png">
-<h4>Laptop Repair</h4>
-</div>
+    <div class="services-grid">
+      <!-- Example Service Cards (aap 50 tak copy-paste kar sakte ho) -->
 
-<div class="service-card">
-<img src="images/services/laptop.png">
-<h4>Computer Repair</h4>
-</div>
+      <div class="service-card">
+        <img src="assets/images/icons/ac.png" alt="AC Repair">
+        <h3>AC Repair</h3>
+        <p>Split & Window AC service</p>
+        <button>Add to Cart</button>
+      </div>
 
-<div class="service-card">
-<img src="images/services/mobile.png">
-<h4>Tablet Repair</h4>
-</div>
+      <div class="service-card">
+        <img src="assets/images/icons/washing-machine.png" alt="">
+        <h3>Washing Machine</h3>
+        <p>All brands repair</p>
+        <button>Add to Cart</button>
+      </div>
 
-<div class="service-card">
-<img src="images/services/mobile.png">
-<h4>Smart Watch Repair</h4>
-</div>
+      <div class="service-card">
+        <img src="assets/images/icons/fridge.png" alt="">
+        <h3>Refrigerator</h3>
+        <p>Cooling problem fix</p>
+        <button>Add to Cart</button>
+      </div>
 
-<div class="service-card">
-<img src="images/services/tv.png">
-<h4>LED TV Repair</h4>
-</div>
+      <div class="service-card">
+        <img src="assets/images/icons/mobile.png" alt="">
+        <h3>Mobile Repair</h3>
+        <p>Screen & battery</p>
+        <button>Add to Cart</button>
+      </div>
 
-<div class="service-card">
-<img src="images/services/tv.png">
-<h4>Smart TV Repair</h4>
-</div>
-
-<div class="service-card">
-<img src="images/services/tv.png">
-<h4>Home Theatre Repair</h4>
-</div>
-
-<div class="service-card">
-<img src="images/services/ac.png">
-<h4>AC Installation</h4>
-</div>
-
-<div class="service-card">
-<img src="images/services/ac.png">
-<h4>AC Repair</h4>
-</div>
-
-<!-- 11–20 -->
-<div class="service-card">
-<img src="images/services/ac.png">
-<h4>AC Gas Filling</h4>
-</div>
-
-<div class="service-card">
-<img src="images/services/washing-machine.png">
-<h4>Washing Machine Repair</h4>
-</div>
-
-<div class="service-card">
-<img src="images/services/washing-machine.png">
-<h4>Dryer Repair</h4>
-</div>
-
-<div class="service-card">
-<img src="images/services/fridge.png">
-<h4>Refrigerator Repair</h4>
-</div>
-
-<div class="service-card">
-<img src="images/services/microwave.png">
-<h4>Microwave Repair</h4>
-</div>
-
-<div class="service-card">
-<img src="images/services/geyser.png">
-<h4>Geyser Repair</h4>
-</div>
-
-<div class="service-card">
-<img src="images/services/ro.png">
-<h4>RO Repair</h4>
-</div>
-
-<div class="service-card">
-<img src="images/services/chimney.png">
-<h4>Kitchen Chimney Repair</h4>
-</div>
-
-<div class="service-card">
-<img src="images/services/inverter.png">
-<h4>Inverter Repair</h4>
-</div>
-
-<div class="service-card">
-<img src="images/services/ups.png">
-<h4>UPS Repair</h4>
-</div>
-
-<!-- Baaki same pattern me 50 tak add kar sakte ho -->
-
-</div>
-</section>
-
-<footer>
-<div class="footer-grid">
-    <div>
-        <h3>RepairService</h3>
-        <p>India’s trusted home appliance repairing platform.</p>
+      <!-- Isi pattern me 50 services bana sakte ho -->
     </div>
-    <div>
-        <h3>Quick Links</h3>
-        <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </div>
-    <div>
-        <h3>Contact</h3>
-        <p>📞 +91 90000 00000</p>
-        <p>✉ support@repairservice.com</p>
-    </div>
-</div>
-<script>
-function openService(name, image, desc) {
-    localStorage.setItem("serviceName", name);
-    localStorage.setItem("serviceImage", image);
-    localStorage.setItem("serviceDesc", desc);
-    window.location.href = "service-details.html";
-}
-</script>
+  </section>
+
+
+  
+
+  <!-- FOOTER (STANDARD – NO CART) -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">Careers</a>
+      </div>
+
+      <div>
+        <h4>Services</h4>
+        <a href="#">AC Repair</a>
+        <a href="#">Washing Machine</a>
+        <a href="#">Refrigerator</a>
+        <a href="#">Mobile Repair</a>
+      </div>
+
+      <div>
+        <h4>Support</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">Terms & Conditions</a>
+      </div>
+
       <div>
         <h4>Contact</h4>
         <p>Email: serviceprovidercentre00@gmail.com</p>
@@ -315,4 +249,5 @@ function openService(name, image, desc) {
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
